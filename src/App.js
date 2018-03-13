@@ -6,16 +6,40 @@ class App extends Component {
     return (
       <div className="App">
         <div className="task-vbox">
-          <div className="task-top">One</div>
-          <div className="task-bottom">Two</div>
+          <div className="task-top">
+            <div className="task-content">
+              Hey<br/>
+              Hey<br/>
+              Hey<br/>
+            </div>
+          </div>
+          <div className="task-bottom">
+            <input className="task-input" type="text" name="fname"/>
+          </div>
         </div>
         <div className="task-vbox">
-          <div className="task-top">One</div>
-          <div className="task-bottom">Two</div>
+          <div className="task-top">
+            <div className="task-content">
+              Hey<br/>
+              Hey<br/>
+              Hey<br/>
+            </div>
+          </div>
+          <div className="task-bottom">
+            <input className="task-input" type="text" name="fname"/>
+          </div>
         </div>
         <div className="task-vbox">
-          <div className="task-top">One</div>
-          <div className="task-bottom">Two</div>
+          <div className="task-top">
+            <div className="task-content">
+              Hey<br/>
+              Hey<br/>
+              Hey<br/>
+            </div>
+          </div>
+          <div className="task-bottom">
+            <input className="task-input" type="text" name="fname"/>
+          </div>
         </div>
       </div>
     );

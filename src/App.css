@@ -11,22 +11,42 @@
 
 .task-vbox {
   display: inline-block;
-  width: 30%;
+  width: 33.33%;
   height: 100%;
-  margin: 5px;
+  padding: 5px 10px;
   vertical-align: middle;
-  
+
   background: lightgrey;
 }
 
 .task-vbox .task-top {
   height: calc(100% - 50px);
+  padding: 10px;
 
   background: lightblue;
 }
 
 .task-vbox .task-bottom {
   height: 50px;
+  line-height: 50px;
 
   background: lightcoral;
+}
+
+.task-content {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  
+  border: black solid;
+  border-width: 2px;
+  border-radius: 5px;
+
+  background: lightgreen;
+}
+
+.task-input {
+  width: 90%;
+  height: 25px;
+  border-radius: 5px;
 }
