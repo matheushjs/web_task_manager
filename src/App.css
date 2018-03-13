@@ -1,0 +1,32 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+.task-vbox {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  margin: 5px;
+  vertical-align: middle;
+  
+  background: lightgrey;
+}
+
+.task-vbox .task-top {
+  height: calc(100% - 50px);
+
+  background: lightblue;
+}
+
+.task-vbox .task-bottom {
+  height: 50px;
+
+  background: lightcoral;
+}
