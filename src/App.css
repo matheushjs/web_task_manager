@@ -9,34 +9,18 @@
   width: 100%;
 }
 
-.task-vbox {
+.itembox-container {
   display: inline-block;
   width: 33.33%;
-  height: 100%;
-  padding: 5px 10px;
-  vertical-align: middle;
-
-  background: lightgrey;
-}
-
-.task-vbox .itembox-top {
-  height: calc(100% - 50px);
-  padding: 10px;
+  height: 30vh;
+  padding: 0px 10px;
 
   background: lightblue;
 }
 
-.task-vbox .task-bottom {
-  height: 50px;
-  line-height: 50px;
-
-  background: lightcoral;
-}
-
-.itembox-content {
+.itembox-items {
   width: 100%;
-  height: 100%;
-  padding: 5px;
+  height: 80%;
   
   border: black solid;
   border-width: 2px;
@@ -45,8 +29,21 @@
   background: lightgreen;
 }
 
-.task-input {
+.itembox-inputbox {
+  margin-top: 5px;
+  width: 100%;
+
+  height: calc(20% - 5px);
+  line-height: 50px;
+
+  border: black solid;
+  border-width: 2px;
+  border-radius: 5px;
+  
+  background: lightcoral;
+}
+
+.itembox-input {
   width: 90%;
   height: 25px;
-  border-radius: 5px;
 }
