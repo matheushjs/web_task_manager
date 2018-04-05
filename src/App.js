@@ -24,12 +24,37 @@ function ItemBox(props) {
 }
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      items: [
+        ["A1", "A2", "A3"],
+        ["B1", "B2", "B3"],
+        ["C1", "C2", "C3"],
+      ]
+    }
+  }
+  
+  onSubmit(event, idx){
+    let value = event.target.childNodes[0].value;
+    event.target.childNodes[0].value = "";
+
+    this.setState(prevState => {
+      prevState.items[idx] = prevState.items[idx].concat(value);
+      return {
+        items: prevState.items,
+      }
+    });
+
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="App">
-          <ItemBox items={["Hey", "Hey", "Hey"]} hasInput={true} onSubmit={() => alert("hey")} />
-          <ItemBox items={["Hey", "Hey", "Hey"]} hasInput={true} onSubmit={() => alert("hey")}/>
-          <ItemBox items={["Hey", "Hey", "Hey"]} hasInput={true} onSubmit={() => alert("hey")}/>
+        {this.state.items.map(
+          (value, idx) => <ItemBox key={idx} items={this.state.items[idx]} hasInput={true} onSubmit={(e) => this.onSubmit(e, idx)}/>
+        )}
       </div>
     );
   }
