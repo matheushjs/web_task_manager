@@ -8,7 +8,7 @@ function ItemBox(props) {
     input = 
       <div className="itembox-inputbox">
         <form onSubmit={props.onSubmit}>
-          <input className="itembox-input" type="text" name="fname"/>
+          <input className="itembox-input" type="text" name="fname" autocomplete="off"/>
         </form>
       </div>
   }

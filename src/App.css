@@ -9,13 +9,15 @@
   width: 100%;
 }
 
+/* Our pallete: #BB2814,#F8A44C,#FFF9D1,#B38C7D,#48394C */
+
 .itembox-container {
   display: inline-block;
   width: 33.33%;
   height: 30vh;
-  padding: 0px 10px;
+  padding: 5px 10px;
 
-  background: lightblue;
+  background: #48394C;
 }
 
 .itembox-items {
@@ -29,7 +31,7 @@
   border-width: 2px;
   border-radius: 5px;
 
-  background: lightgreen;
+  background: #FFF9D1;
 }
 
 .itembox-items p {
@@ -47,10 +49,11 @@
   border-width: 2px;
   border-radius: 5px;
   
-  background: lightcoral;
+  background: #B38C7D;
 }
 
 .itembox-input {
   width: 90%;
   height: 25px;
+  border-radius: 5px;
 }
