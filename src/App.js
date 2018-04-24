@@ -28,18 +28,19 @@ class App extends Component {
     super();
     this.state = {
       items: [
-        ["A1", "A2", "A3"],
-        ["B1", "B2", "B3"],
-        ["C1", "C2", "C3"],
+        [],
+        [],
+        [],
       ]
     }
   }
   
   componentDidMount() {
-    let data = localStorage.getItem('daily-tasks');
+    let data = localStorage.getItem('tasks');
+
     if(data){
       this.setState(prevState => {
-        prevState.items[0][0] = data;
+        prevState.items = JSON.parse(data);
         return prevState;
       })
     }
@@ -49,10 +50,9 @@ class App extends Component {
     let value = event.target.childNodes[0].value;
     event.target.childNodes[0].value = "";
 
-    localStorage.setItem('daily-tasks', value);
-
     this.setState(prevState => {
       prevState.items[idx] = prevState.items[idx].concat(value);
+      localStorage.setItem('tasks', JSON.stringify(prevState.items));
       return {
         items: prevState.items,
       }
