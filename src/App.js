@@ -35,9 +35,21 @@ class App extends Component {
     }
   }
   
+  componentDidMount() {
+    let data = localStorage.getItem('daily-tasks');
+    if(data){
+      this.setState(prevState => {
+        prevState.items[0][0] = data;
+        return prevState;
+      })
+    }
+  }
+
   onSubmit(event, idx){
     let value = event.target.childNodes[0].value;
     event.target.childNodes[0].value = "";
+
+    localStorage.setItem('daily-tasks', value);
 
     this.setState(prevState => {
       prevState.items[idx] = prevState.items[idx].concat(value);
