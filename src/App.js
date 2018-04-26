@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 
+function drag(ev){
+  var msg = {
+    text: ev.target.textContent,
+  };
+
+  ev.dataTransfer.setData("text", JSON.stringify(msg));
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = JSON.parse(ev.dataTransfer.getData("text"));
+  console.log(data);
+  // ev.target.appendChild(document.getElementById(data));
+}
+
+function dragover(ev){
+  ev.preventDefault();
+  ev.target.style = "background: lightgrey;";
+}
+
 function ItemBox(props) {
   // props.items, props.hasInput, props.onSubmit
   let input = ""
@@ -8,7 +28,7 @@ function ItemBox(props) {
     input = 
       <div className="itembox-inputbox">
         <form onSubmit={props.onSubmit}>
-          <input className="itembox-input" type="text" name="fname" autocomplete="off"/>
+          <input className="itembox-input" type="text" name="fname" autoComplete="off"/>
         </form>
       </div>
   }
@@ -16,7 +36,7 @@ function ItemBox(props) {
   return (
     <div className="itembox-container">
       <div className="itembox-items">
-        {props.items.map((element, idx) => <p key={idx}>{element}</p>)}
+        {props.items.map((element, idx) => <p draggable="true" onDrop={drop} onDragStart={drag} onDragOver={dragover} key={idx}>{element}</p>)}
       </div>
         {input}
     </div>
